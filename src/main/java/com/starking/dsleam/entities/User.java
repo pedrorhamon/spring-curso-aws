@@ -1,6 +1,7 @@
 package com.starking.dsleam.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -29,5 +30,7 @@ public class User implements Serializable{
 	private String email;
 	
 	private String password;
+	
+	private Set<Role> roles;
 
 }
