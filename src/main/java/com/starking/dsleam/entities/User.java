@@ -1,6 +1,7 @@
 package com.starking.dsleam.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import lombok.AllArgsConstructor;
@@ -31,6 +32,6 @@ public class User implements Serializable{
 	
 	private String password;
 	
-	private Set<Role> roles;
+	private Set<Role> roles = new HashSet<>();
 
 }
