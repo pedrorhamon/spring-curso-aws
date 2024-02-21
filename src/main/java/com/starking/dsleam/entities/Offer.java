@@ -2,6 +2,7 @@ package com.starking.dsleam.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,5 +38,7 @@ public class Offer implements Serializable{
 	private String edition;
 	private Instant startMoment;
 	private Instant endMoment;
+	
+	private List<Course> courses;
 	
 }
