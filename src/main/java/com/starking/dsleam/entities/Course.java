@@ -1,6 +1,7 @@
 package com.starking.dsleam.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,4 +37,6 @@ public class Course implements Serializable{
 	private String name;
 	private String imgUri;
 	private String imgGrayUri;
+	
+	private List<Offer> offers;
 }
