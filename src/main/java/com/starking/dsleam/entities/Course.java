@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -39,5 +40,6 @@ public class Course implements Serializable{
 	private String imgUri;
 	private String imgGrayUri;
 	
+	@OneToMany(mappedBy = "course")
 	private List<Offer> offers = new ArrayList<>();
 }
