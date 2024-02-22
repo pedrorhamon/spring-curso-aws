@@ -1,7 +1,9 @@
 package com.starking.dsleam.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
@@ -49,5 +51,7 @@ public class User implements Serializable{
 	@JoinTable(name = "tb_user_role", joinColumns = @JoinColumn(name = "user_id"),
 	inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
+	
+	private List<Notification> notifications = new ArrayList<>();
 
 }
