@@ -3,6 +3,8 @@ package com.starking.dsleam.entities;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.starking.dsleam.entities.pk.EnrollmentPK;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -24,9 +26,10 @@ public class Enrollment implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	private EnrollmentPK enrollmentPK;
 	private Instant enrollMoment;
 	private Instant refundMoment;
-	private boolean available = true;
+	private boolean available;
 	private boolean onlyUpdate;
 	
 
