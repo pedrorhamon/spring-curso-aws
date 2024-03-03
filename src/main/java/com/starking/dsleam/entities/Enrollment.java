@@ -39,5 +39,20 @@ public class Enrollment implements Serializable {
 		this.available = available;
 		this.onlyUpdate = onlyUpdate;
 	}
-
+	
+	public User getStudent() {
+		return this.id.getUser();
+	}
+	
+	public void setStudent(User user) {
+		id.setUser(user);
+	}
+	
+	public Offer getOffer() {
+		return this.id.getOffer();
+	}
+	
+	public void setOffer(Offer offer) {
+		id.setOffer(offer);
+	}
 }
