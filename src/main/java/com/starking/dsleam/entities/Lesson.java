@@ -7,6 +7,7 @@ import java.util.Set;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,7 +19,6 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public abstract class Lesson implements Serializable{
@@ -37,4 +37,11 @@ public abstract class Lesson implements Serializable{
 	private Section section;
 	
 	private Set<Enrollment> enrollments = new HashSet<>();
+
+	public Lesson(Long id, String title, Integer position, Section section) {
+		this.id = id;
+		this.title = title;
+		this.position = position;
+		this.section = section;
+	}
 }
