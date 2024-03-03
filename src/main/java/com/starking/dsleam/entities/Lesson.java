@@ -19,7 +19,7 @@ import lombok.Setter;
  * @author pedroRhamon
  */
 @Entity
-@Table(name = "tb_section")
+@Table(name = "tb_lesson")
 @Getter
 @Setter
 @AllArgsConstructor
