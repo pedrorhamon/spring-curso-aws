@@ -5,6 +5,7 @@ import java.time.Instant;
 
 import com.starking.dsleam.entities.pk.EnrollmentPK;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -27,7 +28,11 @@ public class Enrollment implements Serializable {
 
 	@EmbeddedId
 	private EnrollmentPK id = new EnrollmentPK();
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant enrollMoment;
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant refundMoment;
 	private boolean available;
 	private boolean onlyUpdate;
