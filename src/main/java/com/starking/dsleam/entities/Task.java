@@ -42,7 +42,4 @@ public class Task extends Lesson {
 		this.weight = weight;
 		this.dueDate = dueDate;
 	}
-	
-	
-
 }
