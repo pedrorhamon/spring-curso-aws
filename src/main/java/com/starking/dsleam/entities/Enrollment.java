@@ -5,6 +5,7 @@ import java.time.Instant;
 
 import com.starking.dsleam.entities.pk.EnrollmentPK;
 
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class Enrollment implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@EmbeddedId
 	private EnrollmentPK id = new EnrollmentPK();
 	private Instant enrollMoment;
 	private Instant refundMoment;
