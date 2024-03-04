@@ -1,7 +1,8 @@
 package com.starking.dsleam.entities;
 
-import java.io.Serializable;
 import java.time.Instant;
+
+import com.starking.dsleam.entities.enums.DeliverStatus;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -17,34 +19,33 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * @author pedroRhamon
- */
-
-@Entity
-@Table(name = "tb_notification")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Notification implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
-	
+@Entity
+@Table(name = "tb_deliver")
+public class Deliver {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
 	private Long id;
-	
-	private String text;
-	
+	private String uri;
+
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant moment;
-	private boolean read;
-	private String route;
-	
+
+	private DeliverStatus status;
+	private String feedback;
+	private Integer correctCount;
+
 	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private User user;
+	@JoinColumns({ @JoinColumn(name = "offer_id"), @JoinColumn(name = "user_id") })
+	private Enrollment enrollment;
+
+	@ManyToOne
+	@JoinColumn(name = "lesson_id")
+	private Lesson lesson;
 }
